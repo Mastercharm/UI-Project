@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.9.4/styles/salesforce-lightning-design-system.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/cardview.css"/>
+    <link rel="stylesheet" href="css/tableview.css"/>
+    <link rel="stylesheet" href="css/mediqueries.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+   <script>
+$(document).ready(function(){
+  $("#btn-cardview").click(function(){
+      $("#cardview").css("display","grid");
+      $("#tableview").hide();
+  });
+    
+    $("#btn-tableview").click(function(){
+         $("#tableview").css("display","table");
+         $("#cardview").hide();
+  });
+    
+    $("#open").click(function(){
+         $("#sidebar").css("display","block");
+    });
+    $("#close").click(function(){
+         $("#sidebar").css("display","none");
+    });
+});
+       
+
+</script>
+</head>
+<body>
+<!-------Navbar-------->
+<section id="navbar">
+<div class="navbar">
+<a href="#top" class="logo"><img src="images/logo.jpg"></a>
+<ul class="navigation">
+<li><span class="menu-open" id="open">&#9776;</span></li>
+<li>Dashboard</li>
+<li class="li-2">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.5 16.875C12.5 18.2563 11.3813 19.375 10 19.375C8.61875 19.375 7.5 18.2563 7.5 16.875" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0.625 14.375H19.375" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.125 14.375H18.75C17.3687 14.375 15.625 13.2563 15.625 11.875V6.25C15.625 3.14375 13.1063 0.625 10 0.625V0.625C6.89375 0.625 4.375 3.14375 4.375 6.25V11.875C4.375 13.2563 3.25625 14.375 1.875 14.375" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="16" cy="4" r="4" fill="#00A0FF"/>
+</svg>
+</li>
+<li class="li-3">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#212121" d="M50,43v2.2c0,2.6-2.2,4.8-4.8,4.8H6.8C4.2,50,2,47.8,2,45.2V43c0-5.8,6.8-9.4,13.2-12.2
+c0.2-0.1,0.4-0.2,0.6-0.3c0.5-0.2,1-0.2,1.5,0.1c2.6,1.7,5.5,2.6,8.6,2.6s6.1-1,8.6-2.6c0.5-0.3,1-0.3,1.5-0.1
+c0.2,0.1,0.4,0.2,0.6,0.3C43.2,33.6,50,37.1,50,43z M26,2c6.6,0,11.9,5.9,11.9,13.2S32.6,28.4,26,28.4s-11.9-5.9-11.9-13.2
+S19.4,2,26,2z"/>
+</svg>
+<span>Stina Gunnasottir</span></li>
+<li class="down-icon">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#212121" d="M47.6,17.8L27.1,38.5c-0.6,0.6-1.6,0.6-2.2,0L4.4,17.8c-0.6-0.6-0.6-1.6,0-2.2l2.2-2.2 c0.6-0.6,1.6-0.6,2.2,0l16.1,16.3c0.6,0.6,1.6,0.6,2.2,0l16.1-16.2c0.6-0.6,1.6-0.6,2.2,0l2.2,2.2C48.1,16.3,48.1,17.2,47.6,17.8z"/>
+</svg>
+</li>
+</ul>   
+</div>
+</section>
+<!------------Grid layout-------->
+<section id="grid-layout">
+<div class="slds-grid slds-wrap">
+<div class="slds-col slds-size_3-of-12">
+  <div class="sidebar" id="sidebar">
+    <a href="javascript:void(0)" class="closebtn" id="close">&times;</a>
+      <ul class="ul-container">
+         <li class="li-item1">SUMMARY</li>
+         <li class="li-item">Auto Summary</li>
+         <li class="li-item1">INVESTMENTS</li>
+         <li class="li-item">My Investments</li>
+         <li class="li-item"><a href="#grid-broken">Investor List</a></li>
+         <li class="li-item1">DOCUMENTS</li>
+         <li class="li-item">My Document</li>
+         <li class="li-item">Delegate Document</li>
+         <li class="li-item1">TRANSACTIONS</li>
+         <li class="li-item">My Transactions</li>
+         <li class="li-item1">DELEGATE</li>
+         <li class="li-item">My Delegate</li>
+          <li class="li-h1"><h1>&#169; 2021 $@!. All Rights Reserved.</h1></li>
+      </ul>
+    </div>
+<div class="side-navbar" id="side-navbar">
+<div class="slds-nav-vertical__section">
+<div>
+
+<fieldset class="slds-nav-vertical">
+<legend class="slds-nav-vertical__title">SUMMARY</legend>
+<span class="slds-nav-vertical__item">
+<input type="radio" id="unique-id-01-recent" value="unique-id-01-recent" name="unique-id-example" checked="" />
+<label class="slds-nav-vertical__action" for="unique-id-01-recent">
+<span class="slds-nav-vertical_radio-faux">Account Summary</span>
+</label>
+</span>
+<legend class="slds-nav-vertical__title">INVESTMENTS</legend>
+<span class="slds-nav-vertical__item">
+<input type="radio" id="unique-id-01-created-by-me" value="unique-id-01-created-by-me" name="unique-id-example" />
+<label class="slds-nav-vertical__action" for="unique-id-01-created-by-me">
+<span class="slds-nav-vertical_radio-faux">My Investments</span>
+</label>
+</span>
+<span class="slds-nav-vertical__item">
+<input type="radio" id="unique-id-01-private-reports" value="unique-id-01-private-reports" name="unique-id-example" />
+<label class="slds-nav-vertical__action" for="unique-id-01-private-reports">
+<span class="slds-nav-vertical_radio-faux">Investor List</span>
+</label>
+</span>
+<legend class="slds-nav-vertical__title">DOCUMENTS</legend>
+<span class="slds-nav-vertical__item">
+<input type="radio" id="unique-id-01-public-reports" value="unique-id-01-public-reports" name="unique-id-example" />
+<label class="slds-nav-vertical__action" for="unique-id-01-public-reports">
+<span class="slds-nav-vertical_radio-faux">My Documents</span>
+</label>
+</span>
+<span class="slds-nav-vertical__item">
+<input type="radio" id="unique-id-01-all-reports" value="unique-id-01-all-reports" name="unique-id-example" />
+<label class="slds-nav-vertical__action" for="unique-id-01-all-reports">
+<span class="slds-nav-vertical_radio-faux">Delegate Document</span>
+</label>
+</span>
+<legend class="slds-nav-vertical__title">TRANSCATIONS</legend>
+<span class="slds-nav-vertical__item">
+<input type="radio" id="unique-id-01-all-reports" value="unique-id-01-all-reports" name="unique-id-example" />
+<label class="slds-nav-vertical__action" for="unique-id-01-all-reports">
+<span class="slds-nav-vertical_radio-faux">My Transactions</span>
+</label>
+</span>
+<legend class="slds-nav-vertical__title">My Delegate</legend>
+<span class="slds-nav-vertical__item">
+<input type="radio" id="unique-id-01-all-reports" value="unique-id-01-all-reports" name="unique-id-example" />
+<label class="slds-nav-vertical__action" for="unique-id-01-all-reports">
+<span class="slds-nav-vertical_radio-faux">Delegate Document</span>
+</label>
+</span>
+</fieldset>
+
+</div>
+</div> 
+<div class="side-footer">
+<h1>&#169; 2021 $@!. All Rights Reserved.</h1>    
+</div>
+</div>
+</div>
+<div class="slds-col slds-size_9-of-12">
+<div class="grid-broken" id="grid-broken">
+<div class="slds-grid slds-grid_vertical">
+<div class="slds-col">
+<!--------page header------->
+<div class="slds-text-heading_medium">Investor List</div>
+<div class="page-header">
+<ul class="page-header-navigation">
+<li class="li-search">
+<div class="slds-form-element__control">
+<div class="slds-combobox_container">
+<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+<input type="text" class="slds-input slds-combobox__input" id="stacked-combobox-id-01" aria-controls="stacked-listbox-id-01" aria-expanded="false" aria-haspopup="listbox" autoComplete="off" role="combobox" placeholder="Search by Name or Email..."/>
+<span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.2727 15.2727L10.6589 10.6589" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="6.54545" cy="6.54545" r="5.81818" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</div>      
+</div>
+</div>   
+</li>
+<li>
+<span class="span-icon">Both &nbsp;&nbsp;&nbsp;&nbsp;
+<svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.0243835 0L5.18699 6L10.3496 0H0.0243835Z" fill="#303030"/>
+</svg>  
+</span>
+</li>
+<li>
+<span class="span-icon">All &nbsp;&nbsp;&nbsp;&nbsp;
+<svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.0243835 0L5.18699 6L10.3496 0H0.0243835Z" fill="#303030"/>
+</svg>  
+</span>
+</li>
+<li class="toggle-menu">
+<span class="span-icon">
+<button id="btn-cardview">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="6" height="6" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="9.5" y="0.5" width="6" height="6" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="0.5" y="9.5" width="6" height="6" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="9.5" y="9.5" width="6" height="6" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>      
+</button>
+<button id="btn-tableview">
+<svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="15" height="2" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="0.5" y="5.5" width="15" height="2" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="0.5" y="10.5" width="15" height="2" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>     
+</button>
+</span>
+</li>
+<li>
+<span class="span-icon">
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.11115 6.22221L9.00003 10.6667L12.8889 6.22221H10.6667V0.666656H7.33337V6.22221H5.11115Z" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 0.666656H16.2222C16.8356 0.666656 17.3334 1.16443 17.3334 1.77777V16.2222C17.3334 16.8355 16.8356 17.3333 16.2222 17.3333H1.7778C1.16446 17.3333 0.666687 16.8355 0.666687 16.2222V1.77777C0.666687 1.16443 1.16446 0.666656 1.7778 0.666656H4.00002" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0.666687 14H17.3334" stroke="#303030" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>   
+</li>
+</ul>
+</div>
+</div>
+<div class="slds-col">
+<!--------cardview---------->
+<div class="cardview" id="cardview">
+<div class="card">
+<div class="slds-card__header slds-grid">
+<header class="slds-media slds-media_center slds-has-flexi-truncate">
+<div class="slds-media__body">
+<h2 class="slds-card__header-title">
+</h2>
+</div>
+<div class="slds-no-flex">
+<span class="slds-icon_container">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+ width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</span>
+</div>
+</header>
+</div>
+<div class="slds-card__body slds-card__body_inner">
+<div class="profile-icon">
+<span class="slds-avatar slds-avatar_circle slds-avatar_large">
+<img alt="Person picture" src="https://images.unsplash.com/photo-1595152452543-e5fc28ebc2b8?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8aGVhZHNob3R8fHx8fHwxNjM3MDU2NzY3&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400" class=""/>
+</span>
+</div>
+<div class="text-card">
+<div class="slds-text-heading_small">Ivan Magaihaies</div>
+<div class="slds-text-body_small">abcdef@xyz.com</div><br/>
+<div class="slds-text-body_small">Total Contributions</div>
+<div class="slds-text-heading_small">$ 821,243</div>
+</div>
+</div>
+<footer class="slds-card__footer">
+<a class="slds-card__footer-action" href="#">View Details
+</a>
+</footer>
+</div>
+<div class="card">
+<div class="slds-card__header slds-grid">
+<header class="slds-media slds-media_center slds-has-flexi-truncate">
+<div class="slds-media__body">
+<h2 class="slds-card__header-title">
+</h2>
+</div>
+<div class="slds-no-flex">
+<span class="slds-icon_container">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+ width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</span>
+</div>
+</header>
+</div>
+<div class="slds-card__body slds-card__body_inner">
+<div class="profile-icon">
+<span class="slds-avatar slds-avatar_circle slds-avatar_large">
+<img alt="Person picture" src="images/2.jpeg" class=""/>
+</span>
+</div>
+<div class="text-card">
+<div class="slds-text-heading_small">Uesugi Suzuki</div>
+<div class="slds-text-body_small">abcdef@xyz.com</div><br/>
+<div class="slds-text-body_small">Total Contributions</div>
+<div class="slds-text-heading_small">$ 821,243</div>
+</div>
+</div>
+<footer class="slds-card__footer">
+<a class="slds-card__footer-action" href="#">View Details
+</a>
+</footer>
+</div>
+<div class="card">
+<div class="slds-card__header slds-grid">
+<header class="slds-media slds-media_center slds-has-flexi-truncate">
+<div class="slds-media__body">
+<h2 class="slds-card__header-title">
+</h2>
+</div>
+<div class="slds-no-flex">
+<span class="slds-icon_container">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+ width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</span>
+</div>
+</header>
+</div>
+<div class="slds-card__body slds-card__body_inner">
+<div class="profile-icon">
+<span class="slds-avatar slds-avatar_circle slds-avatar_large">
+<img alt="Person picture" src="images/3.jpeg" class=""/>
+</span>
+</div>
+<div class="text-card">
+<div class="slds-text-heading_small">Zoe Miller</div>
+<div class="slds-text-body_small">abcdef@xyz.com</div><br/>
+<div class="slds-text-body_small">Total Contributions</div>
+<div class="slds-text-heading_small">$ 821,243</div>
+</div>
+</div>
+<footer class="slds-card__footer">
+<a class="slds-card__footer-action" href="#">View Details
+</a>
+</footer>
+</div>
+<div class="card">
+<div class="slds-card__header slds-grid">
+<header class="slds-media slds-media_center slds-has-flexi-truncate">
+<div class="slds-media__body">
+<h2 class="slds-card__header-title">
+</h2>
+</div>
+<div class="slds-no-flex">
+<span class="slds-icon_container">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+ width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</span>
+</div>
+</header>
+</div>
+<div class="slds-card__body slds-card__body_inner">
+<div class="profile-icon">
+<span class="slds-avatar slds-avatar_circle slds-avatar_large">
+<img alt="Person picture" src="images/4.jpeg" class=""/>
+</span>
+</div>
+<div class="text-card">
+<div class="slds-text-heading_small">David Roy</div>
+<div class="slds-text-body_small">abcdef@xyz.com</div><br/>
+<div class="slds-text-body_small">Total Contributions</div>
+<div class="slds-text-heading_small">$ 821,243</div>
+</div>
+</div>
+<footer class="slds-card__footer">
+<a class="slds-card__footer-action" href="#">View Details
+</a>
+</footer>
+</div>
+<div class="card">
+<div class="slds-card__header slds-grid">
+<header class="slds-media slds-media_center slds-has-flexi-truncate">
+<div class="slds-media__body">
+<h2 class="slds-card__header-title">
+</h2>
+</div>
+<div class="slds-no-flex">
+<span class="slds-icon_container">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+ width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</span>
+</div>
+</header>
+</div>
+<div class="slds-card__body slds-card__body_inner">
+<div class="profile-icon">
+<span class="slds-avatar slds-avatar_circle slds-avatar_large">
+<img alt="Person picture" src="images/5.jpeg" class=""/>
+</span>
+</div>
+<div class="text-card">
+<div class="slds-text-heading_small">William Hang</div>
+<div class="slds-text-body_small">abcdef@xyz.com</div><br/>
+<div class="slds-text-body_small">Total Contributions</div>
+<div class="slds-text-heading_small">$ 821,243</div>
+</div>
+</div>
+<footer class="slds-card__footer">
+<a class="slds-card__footer-action" href="#">View Details
+</a>
+</footer>
+</div>
+<div class="card">
+<div class="slds-card__header slds-grid">
+<header class="slds-media slds-media_center slds-has-flexi-truncate">
+<div class="slds-media__body">
+<h2 class="slds-card__header-title">
+</h2>
+</div>
+<div class="slds-no-flex">
+<span class="slds-icon_container">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+ width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</span>
+</div>
+</header>
+</div>
+<div class="slds-card__body slds-card__body_inner">
+<div class="profile-icon">
+<span class="slds-avatar slds-avatar_circle slds-avatar_large">
+<img alt="Person picture" src="images/6.jpeg" class=""/>
+</span>
+</div>
+<div class="text-card">
+<div class="slds-text-heading_small">Tom Curran</div>
+<div class="slds-text-body_small">abcdef@xyz.com</div><br/>
+<div class="slds-text-body_small">Total Contributions</div>
+<div class="slds-text-heading_small">$ 821,243</div>
+</div>
+</div>
+<footer class="slds-card__footer">
+<a class="slds-card__footer-action" href="#">View Details
+</a>
+</footer>
+</div>
+<div class="card">
+<div class="slds-card__header slds-grid">
+<header class="slds-media slds-media_center slds-has-flexi-truncate">
+<div class="slds-media__body">
+<h2 class="slds-card__header-title">
+</h2>
+</div>
+<div class="slds-no-flex">
+<span class="slds-icon_container">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+ width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</span>
+</div>
+</header>
+</div>
+<div class="slds-card__body slds-card__body_inner">
+<div class="profile-icon">
+<span class="slds-avatar slds-avatar_circle slds-avatar_large">
+<img alt="Person picture" src="images/7.jpeg" class=""/>
+</span>
+</div>
+<div class="text-card">
+<div class="slds-text-heading_small">Joe Cook</div>
+<div class="slds-text-body_small">abcdef@xyz.com</div><br/>
+<div class="slds-text-body_small">Total Contributions</div>
+<div class="slds-text-heading_small">$ 821,243</div>
+</div>
+</div>
+<footer class="slds-card__footer">
+<a class="slds-card__footer-action" href="#">View Details
+</a>
+</footer>
+</div>
+<div class="card">
+<div class="slds-card__header slds-grid">
+<header class="slds-media slds-media_center slds-has-flexi-truncate">
+<div class="slds-media__body">
+<h2 class="slds-card__header-title">
+</h2>
+</div>
+<div class="slds-no-flex">
+<span class="slds-icon_container">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+ width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</span>
+</div>
+</header>
+</div>
+<div class="slds-card__body slds-card__body_inner">
+<div class="profile-icon">
+<span class="slds-avatar slds-avatar_circle slds-avatar_large">
+<img alt="Person picture" src="images/8.jpeg" class=""/>
+</span>
+</div>
+<div class="text-card">
+<div class="slds-text-heading_small">Smith Wonder</div>
+<div class="slds-text-body_small">abcdef@xyz.com</div><br/>
+<div class="slds-text-body_small">Total Contributions</div>
+<div class="slds-text-heading_small">$ 821,243</div>
+</div>
+</div>
+<footer class="slds-card__footer">
+<a class="slds-card__footer-action" href="#">View Details
+</a>
+</footer>
+</div>
+<div class="card">
+<div class="slds-card__header slds-grid">
+<header class="slds-media slds-media_center slds-has-flexi-truncate">
+<div class="slds-media__body">
+<h2 class="slds-card__header-title">
+</h2>
+</div>
+<div class="slds-no-flex">
+<span class="slds-icon_container">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+ width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</span>
+</div>
+</header>
+</div>
+<div class="slds-card__body slds-card__body_inner">
+<div class="profile-icon">
+<span class="slds-avatar slds-avatar_circle slds-avatar_large">
+<img alt="Person picture" src="images/9.jpeg" class=""/>
+</span>
+</div>
+<div class="text-card">
+<div class="slds-text-heading_small">Hello Hath</div>
+<div class="slds-text-body_small">abcdef@xyz.com</div><br/>
+<div class="slds-text-body_small">Total Contributions</div>
+<div class="slds-text-heading_small">$ 821,243</div>
+</div>
+</div>
+<footer class="slds-card__footer">
+<a class="slds-card__footer-action" href="#">View Details
+</a>
+</footer>
+</div>
+<div class="card">
+<div class="slds-card__header slds-grid">
+<header class="slds-media slds-media_center slds-has-flexi-truncate">
+<div class="slds-media__body">
+<h2 class="slds-card__header-title">
+</h2>
+</div>
+<div class="slds-no-flex">
+<span class="slds-icon_container">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+ width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</span>
+</div>
+</header>
+</div>
+<div class="slds-card__body slds-card__body_inner">
+<div class="profile-icon">
+<span class="slds-avatar slds-avatar_circle slds-avatar_large">
+<img alt="Person picture" src="images/10.jpeg" class=""/>
+</span>
+</div>
+<div class="text-card">
+<div class="slds-text-heading_small">Uesugi Suzuki</div>
+<div class="slds-text-body_small">abcdef@xyz.com</div><br/>
+<div class="slds-text-body_small">Total Contributions</div>
+<div class="slds-text-heading_small">$ 821,243</div>
+</div>
+</div>
+<footer class="slds-card__footer">
+<a class="slds-card__footer-action" href="#">View Details
+</a>
+</footer>
+</div>
+</div>
+<!-------tableview-------->
+<table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label" id="tableview">
+<thead>
+<tr class="slds-line-height_reset slds-text-heading--label">
+<th class="name slds-is-sortable" scope="col">
+<div class="slds-truncate" title="Cloudhub">Name</div>
+</th>
+<th class="name" scope="col">
+<div class="slds-truncate" title="Cloudhub">Total Contributions</div>
+</th>
+<th class="name" scope="col">
+<div class="slds-truncate" title="Cloudhub">Total Distribution</div>
+</th>
+<th class="name" scope="col">
+<div class="slds-truncate" title="Cloudhub">Total Balance</div>
+</th>
+<th class="name" scope="col">
+<div class="slds-truncate" title="Cloudhub">Details</div>
+</th>
+<th class="name" scope="col">
+<div class="slds-truncate" title="Cloudhub"></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="slds-hint-parent">
+<td data-label="" class="td-data">
+<img src="https://images.unsplash.com/photo-1595152452543-e5fc28ebc2b8?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8aGVhZHNob3R8fHx8fHwxNjM3MDU2NzY3&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400" class="slds-avatar_circle"/>
+<div class="slds-truncate" title="Cloudhub">Ivan Magaihaies</div>
+</td>
+<td data-label="Account Name">
+<div class="slds-truncate" title="Cloudhub">$ 821,243</div>
+</td>
+<td data-label="Close Date">
+<div class="slds-truncate" title="4/14/2015">$ 821,243</div>
+</td>
+<td data-label="Prospecting">
+<div class="slds-truncate" title="Prospecting">$ 821,243</div>
+</td>
+<td data-label="Confidence">
+<div class="slds-truncate" title="">
+<img src="icons/open_120.png"/>
+<a href="#" style="color: #00A0FF;">View</a>
+</div>
+</td>
+<td data-label="Amount">
+<div class="slds-truncate" title="$25k">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</div>
+</td>
+</tr>
+<tr class="slds-hint-parent">
+<td data-label="" class="td-data">
+<img src="images/2.jpeg" class="slds-avatar_circle"/>
+<div class="slds-truncate" title="Cloudhub">Uesugi Suzuki</div>
+</td>
+<td data-label="Account Name">
+<div class="slds-truncate" title="Cloudhub">$ 821,243</div>
+</td>
+<td data-label="Close Date">
+<div class="slds-truncate" title="4/14/2015">$ 821,243</div>
+</td>
+<td data-label="Prospecting">
+<div class="slds-truncate" title="Prospecting">$ 821,243</div>
+</td>
+<td data-label="Confidence">
+<div class="slds-truncate" title="">
+<img src="icons/open_120.png"/>
+<a href="#" style="color: #00A0FF;">View</a>
+</div>
+</td>
+<td data-label="Amount">
+<div class="slds-truncate" title="$25k">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</div>
+</td>
+</tr>
+<tr class="slds-hint-parent">
+<td data-label="" class="td-data">
+<img src="images/3.jpeg" class="slds-avatar_circle"/>
+<div class="slds-truncate" title="Cloudhub">Zoe Miller</div>
+</td>
+<td data-label="Account Name">
+<div class="slds-truncate" title="Cloudhub">$ 821,243</div>
+</td>
+<td data-label="Close Date">
+<div class="slds-truncate" title="4/14/2015">$ 821,243</div>
+</td>
+<td data-label="Prospecting">
+<div class="slds-truncate" title="Prospecting">$ 821,243</div>
+</td>
+<td data-label="Confidence">
+<div class="slds-truncate" title="">
+<img src="icons/open_120.png"/>
+<a href="#" style="color: #00A0FF;">View</a>
+</div>
+</td>
+<td data-label="Amount">
+<div class="slds-truncate" title="$25k">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</div>
+</td>
+</tr>
+<tr class="slds-hint-parent">
+<td data-label="" class="td-data">
+<img src="images/4.jpeg" class="slds-avatar_circle"/>
+<div class="slds-truncate" title="Cloudhub">David Roy</div>
+</td>
+<td data-label="Account Name">
+<div class="slds-truncate" title="Cloudhub">$ 821,243</div>
+</td>
+<td data-label="Close Date">
+<div class="slds-truncate" title="4/14/2015">$ 821,243</div>
+</td>
+<td data-label="Prospecting">
+<div class="slds-truncate" title="Prospecting">$ 821,243</div>
+</td>
+<td data-label="Confidence">
+<div class="slds-truncate" title="">
+<img src="icons/open_120.png"/>
+<a href="#" style="color: #00A0FF;">View</a>
+</div>
+</td>
+<td data-label="Amount">
+<div class="slds-truncate" title="$25k">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</div>
+</td>
+</tr>
+<tr class="slds-hint-parent">
+<td data-label="" class="td-data">
+<img src="images/5.jpeg" class="slds-avatar_circle"/>
+<div class="slds-truncate" title="Cloudhub">William Hang</div>
+</td>
+<td data-label="Account Name">
+<div class="slds-truncate" title="Cloudhub">$ 821,243</div>
+</td>
+<td data-label="Close Date">
+<div class="slds-truncate" title="4/14/2015">$ 821,243</div>
+</td>
+<td data-label="Prospecting">
+<div class="slds-truncate" title="Prospecting">$ 821,243</div>
+</td>
+<td data-label="Confidence">
+<div class="slds-truncate" title="">
+<img src="icons/open_120.png"/>
+<a href="#" style="color: #00A0FF;">View</a>
+</div>
+</td>
+<td data-label="Amount">
+<div class="slds-truncate" title="$25k">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</div>
+</td>
+</tr>
+<tr class="slds-hint-parent">
+<td data-label="" class="td-data">
+<img src="images/6.jpeg" class="slds-avatar_circle"/>
+<div class="slds-truncate" title="Cloudhub">Tom Curran</div>
+</td>
+<td data-label="Account Name">
+<div class="slds-truncate" title="Cloudhub">$ 821,243</div>
+</td>
+<td data-label="Close Date">
+<div class="slds-truncate" title="4/14/2015">$ 821,243</div>
+</td>
+<td data-label="Prospecting">
+<div class="slds-truncate" title="Prospecting">$ 821,243</div>
+</td>
+<td data-label="Confidence">
+<div class="slds-truncate" title="">
+<img src="icons/open_120.png"/>
+<a href="#" style="color: #00A0FF;">View</a>
+</div>
+</td>
+<td data-label="Amount">
+<div class="slds-truncate" title="$25k">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</div>
+</td>
+</tr>
+<tr class="slds-hint-parent">
+<td data-label="" class="td-data">
+<img src="images/7.jpeg" class="slds-avatar_circle"/>
+<div class="slds-truncate" title="Cloudhub">Joe Cook</div>
+</td>
+<td data-label="Account Name">
+<div class="slds-truncate" title="Cloudhub">$ 821,243</div>
+</td>
+<td data-label="Close Date">
+<div class="slds-truncate" title="4/14/2015">$ 821,243</div>
+</td>
+<td data-label="Prospecting">
+<div class="slds-truncate" title="Prospecting">$ 821,243</div>
+</td>
+<td data-label="Confidence">
+<div class="slds-truncate" title="">
+<img src="icons/open_120.png"/>
+<a href="#" style="color: #00A0FF;">View</a>
+</div>
+</td>
+<td data-label="Amount">
+<div class="slds-truncate" title="$25k">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</div>
+</td>
+</tr>
+<tr class="slds-hint-parent">
+<td data-label="" class="td-data">
+<img src="images/8.jpeg" class="slds-avatar_circle"/>
+<div class="slds-truncate" title="Cloudhub">Smith Wonder</div>
+</td>
+<td data-label="Account Name">
+<div class="slds-truncate" title="Cloudhub">$ 821,243</div>
+</td>
+<td data-label="Close Date">
+<div class="slds-truncate" title="4/14/2015">$ 821,243</div>
+</td>
+<td data-label="Prospecting">
+<div class="slds-truncate" title="Prospecting">$ 821,243</div>
+</td>
+<td data-label="Confidence">
+<div class="slds-truncate" title="">
+<img src="icons/open_120.png"/>
+<a href="#" style="color: #00A0FF;">View</a>
+</div>
+</td>
+<td data-label="Amount">
+<div class="slds-truncate" title="$25k">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+<path fill="#b5b5b5" d="M8,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S4.7,20,8,20z M26,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6
+S22.7,20,26,20z M44,20c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S40.7,20,44,20z"/>
+</svg>
+</div>
+</td>
+</tr>
+</tbody>
+</table>   
+</div>
+</div>
+</div>
+</div>
+</div>   
+</section>   
+<!-----------footer------>
+
+
+
+</body>
+</html>

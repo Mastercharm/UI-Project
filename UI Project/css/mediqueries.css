@@ -1,0 +1,65 @@
+@media only screen and (max-width:768px) {
+    .navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    }
+    .navbar .logo{
+        font-size:16px;
+    }
+    .navbar .navigation, .li-2, .li-3 svg{
+        font-size: 10px;
+    }
+    #grid-layout{
+        width: 100%;
+        display:flex;
+    }
+    .grid-broken{
+        width: 100%
+    }
+    .page-header{
+        display: none;
+    }
+    .cardview{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+/*
+        position: absolute;
+        right:20px;
+*/    
+    }
+    .cardview .card{
+        background: #fff;
+        border:1px solid #fff;
+        border-radius: 0px;
+        width:200px;
+        height:auto; 
+        box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    }
+    .profile-icon span{
+        width:100px;
+        height:100px;
+    }
+    .slds-text-heading_medium{
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+}
+
+@media (min-width:769px) and (max-width:1023px) { 
+    .cardview{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+}
+@media (max-width:1006px){
+      .page-header{
+        display: none;
+    }
+}

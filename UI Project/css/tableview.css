@@ -1,0 +1,32 @@
+.slds-table{
+    border:0;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    line-height: 2;
+    padding: 10px;
+   
+}
+#tableview{
+    display: none;
+}
+.td-data{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+.td-data img{
+    width:30px;
+    height: 30px;
+}
+.td-data, .slds-truncate{
+    padding: 10px;
+}
+.slds-truncate img{
+    width:14px;
+    height:14px;
+    
+}
+.slds-truncate a{
+    font-size:12px;
+    vertical-align: middle;
+    
+}

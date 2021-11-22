@@ -1,0 +1,271 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    max-width: auto;
+}
+html{
+    background-color:#fff;
+}
+/*------Navbar-------*/
+.navbar{
+    position: fixed;
+    top:0;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:#fff;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: 0.5s;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+
+}
+.menu-open{
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+.navbar .logo{
+    display: inline-block;
+    color: #212121;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.navbar .logo img{
+     width: 50px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+}
+.navbar .navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+.navigation li{
+    list-style: none;
+    margin: 10px 0;
+    padding: 10px;
+}
+.navigation .li-2{
+    border-left: 1px solid #b5b5b5;
+    border-right: 1px solid #b5b5b5;
+}
+.navigation .li-3 {
+   
+}
+.navigation .li-3  svg{
+    border-radius: 50%;
+    border:1px solid #212121;
+     margin-right:10px;
+}
+
+
+/*-------------grid layout----------*/
+#grid-layout{
+    width: 100%;
+    
+    
+}
+.side-navbar{
+    position:fixed;
+    top:80px;
+    width:20%;
+    height:100%;
+    background: #b0c4df;
+}
+.slds-nav-vertical__title{
+    font-size: 12px;
+    font-weight: 400;
+    color:#00A0FF;
+}
+.slds-nav-vertical_radio-faux{
+    font-size: 14px;
+    font-weight: 400;
+    color: #212121;
+}
+/*------responsive sidebar------*/
+.sidebar{
+    display: none;
+    height: 100%;
+  position: fixed;
+    top:120px;
+  z-index: 1;
+  background: #b0c4df;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.ul-container {   
+    display: flex;
+    flex-flow: column wrap;
+    gap:10px;
+    justify-content:space-around;
+    padding:0;
+    margin: 10px;
+    list-style: none;
+  
+  }
+  
+  .li-item1{
+    padding: 10px;
+    width:auto;
+    height: 20px;
+    text-align:left;
+    color: #00A0FF;
+    font-size: 12px;
+  }  
+  .li-item{
+    padding: 10px;
+    width:auto;
+    height: 20px;
+    text-align:left;
+    color: #303030;
+    font-size: 12px;
+  } 
+  .li-item a{
+      color:#303030;
+      text-decoration:none;
+    }
+    
+  .li-item:hover{
+    padding: 10px;
+    width:auto;
+    height: 40px;
+    text-align:center;
+    font-size: 12px;
+    background: linear-gradient(90deg, #b9e1fa 0%, rgba(255, 255, 255, 0.0001) 91.48%);
+    color: #080707;
+  } 
+.li-h1{
+    margin-top: 50px;
+    font-size: 10px;
+}
+
+.closebtn{
+    font-size: 25px;
+    position: absolute;
+    top: 10px;
+    left:140px;
+    color:#212121;
+}
+.side-footer{
+    padding: 20px;
+    margin-top: 100px;
+}
+/*--------responsive sidebar ends-------*/
+.grid-broken{
+    position: absolute;
+    top:100px;
+    width: 70%;
+    height: auto;
+}
+.page-header{
+    height: 80px;
+    
+}
+
+.slds-text-heading_medium{
+    padding: 1px;
+}
+.page-header-navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-weight: 100;
+    gap: 10px;
+    float: right;
+}
+.page-header-navigation .slds-input{
+    border: 1px solid #fff;
+    border-radius: 0px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
+    width:400px;
+}
+.slds-input::placeholder{
+    color: #d5d5d5;
+    font-size: 12px;
+}
+.span-icon{
+    background: #fff;
+    padding: 8px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+}
+.span-icon button{
+    background: none;
+    border:none;
+    color:#212121;
+    padding: 5px;
+    border-radius: 2px;
+}
+.span-icon button:hover{
+    background:#00A0FF;
+    color:#fff;
+}
+
+/*-----------view------
+.view{
+    position: absolute;
+    top:80px;
+    padding: 10px;
+    width: 70%;
+    
+}*/
+/*---------footer--------*/
+#site-footer{
+   position: absolute;
+    top:700px;
+}
+
+/*--------media queries------*/
+@media (max-width: 768px) {
+    .navigation li{
+        font-size: 10px;
+    }
+    .side-navbar{
+        display: none;
+    }
+    
+.grid-broken{
+    position: absolute;
+    top:100px;
+    height: auto;
+}
+    .menu-open{
+        display: block;
+        font-size: 25px;
+    }
+    .down-icon{
+        display: none;
+    }
+    .navbar .logo img{
+        width:30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
