@@ -9,4 +9,4 @@ Images of Project Look :
 
 <img width="1000" alt="Screenshot 2021-11-21 at 12 02 41 PM" src="https://user-images.githubusercontent.com/70831545/142800769-3ae86446-c1a3-4a3c-b3d4-5254cca1d51d.png">
 
-<img width="1000" alt="Screenshot 2021-11-21 at 12 02 41 PM" src="https://user-images.githubusercontent.com/70831545/142800770-a7b501e6-c86c-4388-a779-e9b9c89c5ede.png">
+<img width="1000" alt="Screenshot 2021-11-21 at 12 02 48 PM" src="https://user-images.githubusercontent.com/70831545/142800918-e52ab992-e3c7-4a31-8e12-5f013a800ee4.png">
