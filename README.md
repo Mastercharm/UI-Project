@@ -1,7 +1,7 @@
 # UI-Project
 It contains UI Layout with responsive 
 It holds Cardview layout and Tableview layout.
-During mobile view able to see cardview in responisve manner.
+During mobile view able to see cardview in responisve manner.<br/>
 Images of Project Look :
 <img width="1000" alt="Screenshot 2021-11-21 at 12 01 37 PM" src="https://user-images.githubusercontent.com/70831545/142800753-413e224e-9bf8-4e5b-bac5-be7bfe49a361.png">
 
